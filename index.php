@@ -15,6 +15,30 @@ include_once 'conexion.php';
 <head>
     <meta charset="UTF-8">
     <title>Iniciar Sesion con Token y Cookie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+   
+        <title>Iniciar Sesion con Token y Cookie</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/estilos.css">
+        <link rel="stylesheet" href="./css/normalize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+  
+        
+        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> 
+        
+        <!-- Link hacia el archivo de estilos css -->
+        <link rel="stylesheet" href="css/login.css">  
+        <style type="text/css">     
+        </style> 
+        <script type="text/javascript">
+        
+        </script>
+  
 </head>
 <body>
 
@@ -22,10 +46,6 @@ include_once 'conexion.php';
     //Ejemplo cifrar contraseña
     //echo password_hash('Somoskudasai17', PASSWORD_DEFAULT);
     ?>
-
-     
-    <h1>Login</h1>  
-
     <?php
         //Recibir los datos del formulario
         $datos= filter_input_array(INPUT_POST, FILTER_DEFAULT);
@@ -135,36 +155,73 @@ include_once 'conexion.php';
         }
     ?>
 
-    <!--Inicio del Formulario Login-->
-    <form method="POST" action="">
+    <!--<div class="card">
+        <div class="container">
+            <h1>Login</h1>  
+            <form method="POST" action="">
+                <?php
+                $usuario = "";
+                if(isset($datos['usuario'])){
+                    $usuario = $datos['usuario'];
+                }   
+                ?>
+                <label for="usuario">Usuario</label>
+                <input id="usuario" type="text" name="usuario" placeholder="Digite un usuario"
+                       value="<?php echo $usuario; ?>"><br><br>
+                <?php
+                $contrasena = "";
+                if(isset($datos['contrasena'])){
+                    $contrasena = $datos['contrasena'];
+                }   
+                ?>
+                <label for="contrasena">Contraseña</label>
+                <input id="contrasena" type="password" name="contrasena" placeholder="Digite una contraseña"
+                       value="<?php echo $contrasena; ?>"><br><br>
+                <input type="submit" name="SendLogin" value="Ingresar"><br><br>
+            </form>
+        </div>
+    </div>-->
 
-        <?php
-        $usuario = "";
-        if(isset($datos['usuario'])){
-            $usuario = $datos['usuario'];
-        }
-        
-        ?>
+    <div id="contenedor">
+        <div id="contenedorcentrado">
+            <div id="login">
+            <form method="POST" action="">
+                <?php
+                $usuario = "";
+                if(isset($datos['usuario'])){
+                    $usuario = $datos['usuario'];
+                }   
+                ?>
+                <label for="usuario">Usuario</label>
+                <input id="usuario" type="text" name="usuario" placeholder="Digite un usuario"
+                       value="<?php echo $usuario; ?>"><br><br>
+                <?php
+                $contrasena = "";
+                if(isset($datos['contrasena'])){
+                    $contrasena = $datos['contrasena'];
+                }   
+                ?>
+                <label for="contrasena">Contraseña</label>
+                <input id="contrasena" type="password" name="contrasena" placeholder="Digite una contraseña"
+                       value="<?php echo $contrasena; ?>"><br><br>
+                <input type="submit" name="SendLogin" value="Ingresar"><br><br>
+            </form>
+            </div>
+            <div id="derecho">
+                <div class="titulo">
+                    Bienvenido
+                </div>
+                <hr>
+                <div class="pie-form">
+                    <a href="#">¿Perdiste tu contraseña?</a>
+                    <a href="#">¿No tienes Cuenta? Registrate</a>
+                    <hr>
+                    <a href="#">« Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <label>Usuario</label>
-        <input type="text" name="usuario" placeholder="Digite un usuario"
-        value = "<?php echo $usuario; ?>"><br><br>
-
-
-        <?php
-        $contrasena = "";
-        if(isset($datos['contrasena'])){
-            $contrasena = $datos['contrasena'];
-
-        }
-        
-        ?>
-        <label>Contraseña</label>
-        <input type="password" name="contrasena" placeholder="Digite una contraseña"
-        value = "<?php echo $contrasena; ?>"><br><br>
-
-        <input type="submit" name="SendLogin" value="Ingresar"><br><br>
-    </form>
 
 
     

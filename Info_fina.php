@@ -23,7 +23,7 @@
 	}
 
 
-	echo "Bienvenido " . recuperacionNomeToken() . ". <br>";
+	echo "<font color='white'>Bienvenido " . recuperacionNomeToken() . ". <br></font>";
 ?>
 
 
